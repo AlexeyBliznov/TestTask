@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body%}
+{% include '_flashes.html.twig' %}
+    <h1 class="container p-5 my-5 border bg-light text-dark text-center">Registration</h1>
+    <div class="container p-5 my-5 text-center">
+    {{ form_start(form) }}
+    <div class="mb-3 mt-3">
+        {{ form_widget(form.firstName, {'attr': {'placeholder': 'First name'}}) }}
+        {{ form_errors(form.firstName) }}
+    </div>
+    <div class="mb-3">
+        {{ form_widget(form.lastName, {'attr': {'placeholder': 'Last name'}}) }}
+        {{ form_errors(form.lastName) }}
+    </div>
+    <div class="mb-3">
+        {{ form_widget(form.email, {'attr': {'placeholder': 'Email'}}) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="mb-3">
+        {{ form_row(form.password.first, {'attr': {'placeholder': 'Password'}}) }}
+    </div>
+    <div class="mb-3">
+        {{ form_row(form.password.second, {'attr': {'placeholder': 'Repeat Password'}}) }}
+        {{ form_errors(form.password) }}
+    </div>
+    <button type="submit" class="btn btn-block btn-success">Registration</button>
+    {{ form_end(form) }}
+    </div>
+{% endblock %}
